@@ -2,7 +2,7 @@ import axios from 'axios'
 import store from '../store'
 import token from '../store/token'
 const axiosIstance=axios.create({
-    baseURL: 'http://106.14.242.94:8081/cms/',
+    baseURL: 'https://lcx-bqy.top/cms/',
     timeout: 100000,
 });
 

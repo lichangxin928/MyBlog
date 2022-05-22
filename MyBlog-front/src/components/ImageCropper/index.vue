@@ -781,12 +781,6 @@ export default {
           fmData.append(k, params[k])
         })
       }
-      // 监听进度回调
-      // const uploadProgress = (event) => {
-      //   if (event.lengthComputable) {
-      //     this.progress = 100 * Math.round(event.loaded) / event.total
-      //   }
-      // }
       // 上传文件
       this.reset()
       this.loading = 1

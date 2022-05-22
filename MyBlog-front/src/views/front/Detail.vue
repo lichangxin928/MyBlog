@@ -30,14 +30,13 @@
                                 v-for=" (item,index) in comments" :key="index">
                                 <div id="div-comment-2044" class="comment-body">
                                     <div class="comment-author vcard">
-                                            <img class="avatarss" src="https://oss.liuyanzhao.com/avatar/84.jpg" alt="avatar">
+                                            <img class="avatarss" src="https://img1.baidu.com/it/u=3997252094,1259026511&fm=253&fmt=auto&app=120&f=PNG?w=500&h=500" alt="avatar">
                                             <div  style="margin-left: 90px">
-                                                <a href="/author/aaaaaaaaaaaa@qq.com.html" target="_blank"><strong>{{item.author}}</strong></a>
+                                                <a href="#" target="_blank"><strong>{{item.author}}</strong></a>
                                                 <span class="comment-meta commentmetadata">
                                                     <a href="#comment-2383"></a><br>
-                                                    <span class="comment-aux">
+                                                    <span class="comment-aux" >
                                                         {{item.createDate}}
-                                                        
                                                     </span>
                                                 </span>
                                             <p>{{item.content}}</p>
@@ -56,7 +55,6 @@
                 <Order></Order>
                 <Like></Like>
                 <Tag></Tag>
-
             </div>
         </article>
         <Footer></Footer>
