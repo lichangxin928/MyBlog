@@ -24,8 +24,11 @@ public class UploadController {
         String newFileName=newFileNamePrefix+"."+ex;
         ///usr/LyuBlog/uploadL
         // 保存图片
-        file.transferTo(new File("D:/upload/cms",newFileName));
+//        file.transferTo(new File("D:/upload/cms",newFileName));
+        file.transferTo(new File("/upload/cms",newFileName));
         //最后返回的是一个可以访问的全路径
-        return Result.ok(RequestUtils.getBasePath(request)+"upload/"+newFileName);
+        System.out.println(RequestUtils.getBasePath(request));
+//        return Result.ok(RequestUtils.getBasePath(request) + "upload/"+newFileName);
+        return Result.ok("https://lcx-bqy.top/cms/"+"upload/"+newFileName);
     }
 }

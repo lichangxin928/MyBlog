@@ -72,11 +72,12 @@ public class UserController {
         String ex = originalFilename.substring(originalFilename.lastIndexOf(".")+1,originalFilename.length());
         String newFileNamePrefix= UUID.randomUUID().toString();
         String newFileName=newFileNamePrefix+"."+ex;
+//        file.transferTo(new File("D:/upload/cms",newFileName));
         file.transferTo(new File("/upload/cms",newFileName));
 
         System.out.println(RequestUtils.getBasePath(request)+"upload/"+newFileName);
         //最后返回的是一个可以访问的全路径
-        return Result.ok(RequestUtils.getBasePath(request)+"upload/"+newFileName);
+        return Result.ok("https://lcx-bqy.top/cms/"+"upload/"+newFileName);
     }
 
 }

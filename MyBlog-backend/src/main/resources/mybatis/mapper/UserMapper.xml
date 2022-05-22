@@ -40,7 +40,7 @@
             <if test="updateNickName !=null and updateNickName!=''"> nick_name =#{updateNickName},</if>
             <if test="updateStatus !=null and updateStatus!=''"> status =#{updateStatus},</if>
             <if test="updateAvatar != null and updateAvatar != ''">avatar = #{updateAvatar},</if>
-            <if test="updateEmail !=null and updateEmail!=''"> email =#{updateEmail},</if>
+            <if test="updateEmail !=null and updateEmail!=''"> email =#{updateEmail}</if>
 
         </set>
     </sql>

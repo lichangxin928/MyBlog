@@ -1,7 +1,25 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : aliyun
+ Source Server Type    : MySQL
+ Source Server Version : 50729
+ Source Host           : 39.106.163.62:3306
+ Source Schema         : cms
+
+ Target Server Type    : MySQL
+ Target Server Version : 50729
+ File Encoding         : 65001
+
+ Date: 08/01/2021 19:53:45
+*/
+
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
-
+-- ----------------------------
+-- Table structure for tb_article
+-- ----------------------------
 DROP TABLE IF EXISTS `tb_article`;
 CREATE TABLE `tb_article`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -24,7 +42,13 @@ CREATE TABLE `tb_article`  (
   INDEX `id_articleId_id`(`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 80 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '文章' ROW_FORMAT = Dynamic;
 
+-- ----------------------------
+-- Records of tb_article
+-- ----------------------------
 
+-- ----------------------------
+-- Table structure for tb_article_attachment
+-- ----------------------------
 DROP TABLE IF EXISTS `tb_article_attachment`;
 CREATE TABLE `tb_article_attachment`  (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
@@ -33,7 +57,12 @@ CREATE TABLE `tb_article_attachment`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '文章附件' ROW_FORMAT = Dynamic;
 
-
+-- ----------------------------
+-- Records of tb_article_attachment
+-- ----------------------------
+-- ----------------------------
+-- Table structure for tb_article_tag
+-- ----------------------------
 DROP TABLE IF EXISTS `tb_article_tag`;
 CREATE TABLE `tb_article_tag`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -42,7 +71,13 @@ CREATE TABLE `tb_article_tag`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 97 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '文章标签' ROW_FORMAT = Dynamic;
 
+-- ----------------------------
+-- Records of tb_article_tag
+-- ----------------------------
 
+-- ----------------------------
+-- Table structure for tb_channel
+-- ----------------------------
 DROP TABLE IF EXISTS `tb_channel`;
 CREATE TABLE `tb_channel`  (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
@@ -62,7 +97,13 @@ CREATE TABLE `tb_channel`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 44 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '栏目' ROW_FORMAT = Dynamic;
 
+-- ----------------------------
+-- Records of tb_channel
+-- ----------------------------
 
+-- ----------------------------
+-- Table structure for tb_comment
+-- ----------------------------
 DROP TABLE IF EXISTS `tb_comment`;
 CREATE TABLE `tb_comment`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -75,6 +116,13 @@ CREATE TABLE `tb_comment`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '评论' ROW_FORMAT = Dynamic;
 
+-- ----------------------------
+-- Records of tb_comment
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for tb_friend_link
+-- ----------------------------
 DROP TABLE IF EXISTS `tb_friend_link`;
 CREATE TABLE `tb_friend_link`  (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
@@ -84,7 +132,11 @@ CREATE TABLE `tb_friend_link`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '友情链接' ROW_FORMAT = Dynamic;
 
+-- ----------------------------
+-- Records of tb_friend_link
 
+-- Table structure for tb_tag
+-- ----------------------------
 DROP TABLE IF EXISTS `tb_tag`;
 CREATE TABLE `tb_tag`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -92,7 +144,13 @@ CREATE TABLE `tb_tag`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
+-- ----------------------------
+-- Records of tb_tag
+-- ----------------------------
 
+-- ----------------------------
+-- Table structure for tb_user
+-- ----------------------------
 DROP TABLE IF EXISTS `tb_user`;
 CREATE TABLE `tb_user`  (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
@@ -106,5 +164,7 @@ CREATE TABLE `tb_user`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 358 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
+-- ----------------------------
+-- Records of tb_user
 
 SET FOREIGN_KEY_CHECKS = 1;

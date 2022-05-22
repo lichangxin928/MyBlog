@@ -38,7 +38,8 @@ public class MyMvcConfigurer implements WebMvcConfigurer {
      */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/upload/**").addResourceLocations("file:D:/upload/cms/");
+        registry.addResourceHandler("/upload/**").addResourceLocations("file:/upload/cms/");
+//        registry.addResourceHandler("/upload/**").addResourceLocations("file:D:/upload/cms/");
         registry.addResourceHandler("/static/**").addResourceLocations("resource:/static/");
     }
 

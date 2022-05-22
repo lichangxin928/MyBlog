@@ -94,7 +94,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/mybatis/mapper" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -107,13 +107,8 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.zhaoguoshun.service.impl" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.zhaoguoshun.generator" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\资料\blog\back\src\main\resources" />
       <recent name="D:\2019_3代码\研真博客\cms\src\main\resources\mybatis\mapper" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -121,6 +116,12 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\2019_3代码\研真博客\cms\src\main\resources\mybatis\mapper" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.zhaoguoshun.service.impl" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zhaoguoshun.generator" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -277,6 +278,10 @@
       <workItem from="1652837631779" duration="9570000" />
       <workItem from="1652861060842" duration="8396000" />
       <workItem from="1652925827139" duration="2058000" />
+      <workItem from="1653111293135" duration="2176000" />
+      <workItem from="1653131353888" duration="2428000" />
+      <workItem from="1653185467100" duration="3231000" />
+      <workItem from="1653194664024" duration="1449000" />
     </task>
     <servers />
   </component>
