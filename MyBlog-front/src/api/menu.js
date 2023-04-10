@@ -8,7 +8,7 @@ const data=[
             {
                 name: '用户管理',
                 icon: 'el-icon-user',
-                router: '/user'
+                    router: '/user'
             },
             {
                 name: '栏目管理',

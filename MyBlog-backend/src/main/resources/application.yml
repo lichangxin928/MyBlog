@@ -14,6 +14,17 @@ spring:
   jackson:
     date-format: yyyy-MM-dd
     time-zone: Asia/Shanghai
+  redis:
+    host: 106.14.242.94
+    port: 6888
+    password: 123
+    database: 0
+    timeout: 3000
+    pool:
+      max-active: 200 #最大连接数
+      max-idle: 100 #最大空闲连接数
+      max-wait: 3000 #最大等待时间
+      min-idle: 50
 
 
 mybatis:
@@ -21,3 +32,5 @@ mybatis:
   mapper-locations:  classpath:mybatis/mapper/*.xml
 pagehelper:
   helper-dialect: mysql
+
+

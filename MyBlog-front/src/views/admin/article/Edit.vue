@@ -11,6 +11,7 @@
                     <el-form-item label="栏目" prop="channelId">
                         <treeselect v-model="formData.channelId" :multiple="false" :options="treeDate" />
                     </el-form-item>
+
                 </el-col>
                 <el-col :span="12">
                     <el-form-item label="栏目图" prop="channelImg">

@@ -2,6 +2,7 @@ package com.lcx.framework.config;
 
 
 import com.lcx.framework.mvc.TokenInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -10,26 +11,27 @@ import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
 @Configuration
 public class MyMvcConfigurer implements WebMvcConfigurer {
 
-    @Bean
-    public TokenInterceptor tokenInterceptor(){
-        return new TokenInterceptor();
-    }
 
+    @Autowired
+    TokenInterceptor tokenInterceptor;
     /**
      * 对一些需要登录的页面实现拦截
      * @param registry
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(tokenInterceptor())
+        registry.addInterceptor(tokenInterceptor)
                 .addPathPatterns("/**")
                 .excludePathPatterns("/login",
                         "static/**",
                         "/upload/**",
-                        "/front/**","/friendLink/**","/cms/upload/**");
+                        "/front/**","/friendLink/**",
+                        "/cms/upload/**",
+                        "/cms/user/**");
     }
 
     /**

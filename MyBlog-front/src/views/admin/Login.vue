@@ -40,8 +40,9 @@
         methods:{
             submit(){
                 this.$refs['form'].validate(valid=>{
+                    console.log(valid)
                     if (valid){
-                       this.loading= true
+                        this.loading= true
                         this.$store.dispatch('login',this.form).then(()=>{
                             this.$router.push('/user')
                         }).catch(error=>{

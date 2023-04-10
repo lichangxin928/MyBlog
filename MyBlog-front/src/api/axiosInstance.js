@@ -1,13 +1,13 @@
 import axios from 'axios'
 import store from '../store'
 import token from '../store/token'
-const axiosIstance=axios.create({
-    baseURL: 'https://lcx-bqy.top/cms/',
+const axiosInstance=axios.create({
+    baseURL: 'http://127.0.0.1:8081/cms/',
     timeout: 100000,
 });
 
 // 添加请求拦截器
-axiosIstance.interceptors.request.use(config => {
+axiosInstance.interceptors.request.use(config => {
 
     if (store.state.token){
         config.headers['token'] =store.state.token
@@ -20,10 +20,10 @@ axiosIstance.interceptors.request.use(config => {
 
 
 // 添加响应拦截器
-axiosIstance.interceptors.response.use(response =>{
+axiosInstance.interceptors.response.use(response =>{
 
     let token =response.headers['token']
-
+    console.log(token);
     if (token){
         store.commit('setToken',token)
     }
@@ -42,4 +42,4 @@ axiosIstance.interceptors.response.use(response =>{
     return Promise.reject(error);
 });
 
-export default axiosIstance
+export default axiosInstance

@@ -5,7 +5,7 @@
         </el-header>
 
         <el-container>
-           <Left></Left>
+            <Left></Left>
             <el-main>
                 <el-breadcrumb separator-class="el-icon-arrow-right">
                     <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>

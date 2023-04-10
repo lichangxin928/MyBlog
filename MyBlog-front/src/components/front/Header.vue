@@ -1,11 +1,9 @@
 <template>
     <div>
-        <!-- 首页 Header -->
-        <!--top begin-->
         <header id="header">
             <div class="navbox">
                 <h2 id="mnavh"><span class="navicon"></span></h2>
-                <div class="logo"><a href="/">LCX个人博客</a></div>
+                <div class="logo"><a href="/">个人博客</a></div>
                 <nav>
                     <ul id="starlist">
                         <li><a href="/">首页</a></li>
@@ -26,9 +24,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <!-- <li>
-                            <router-link to="/user" target="_blank">后台管理</router-link>
-                        </li> -->
+                        <li>
+                            <router-link to="/user" target="_blank">用户登录</router-link>
+                        </li>
                     </ul>
                 </nav>
                 <div class="searchico"></div>
@@ -49,13 +47,11 @@
                         </el-form-item>
                     </el-form>
                 </div>
-
-                <!--</form>-->
             </div>
             <div class="searchclose"></div>
         </div>
     </div>
-    <!--top end-->
+
 </template>
 
 <script>

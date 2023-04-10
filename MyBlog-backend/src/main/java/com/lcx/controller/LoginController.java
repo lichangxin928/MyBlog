@@ -1,10 +1,13 @@
 package com.lcx.controller;
 
+import cn.hutool.core.util.IdUtil;
 import com.lcx.entity.User;
-import com.lcx.framework.jwt.JWTUtils;
 import com.lcx.service.impl.UserServiceImpl;
+import com.lcx.utils.Constants;
 import com.lcx.utils.Maps;
+import com.lcx.utils.RedisUtil;
 import com.lcx.utils.Result;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,10 +16,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
+@Slf4j
 public class LoginController {
 
     @Autowired
+    RedisUtil redisUtil;
+
+    @Autowired
     private UserServiceImpl userService;
+
+
 
     @PostMapping("/login")
     public Result login(@RequestBody Map<String,String> paramMap){
@@ -26,11 +35,11 @@ public class LoginController {
         System.out.println(userName+":"+password);
         User user = userService.login(userName, password);
 
-        System.out.println(user);
+        log.info("登录的用户信息: {}",user);
 
         if (user!= null){
-            String token = JWTUtils.sign(user);
-
+            String token = IdUtil.simpleUUID();
+            redisUtil.set(Constants.USER_PREFIX + token,user,Constants.TOKEN_EXPR);
             if (user.getStatus().equals("F")){
                 return Result.fail("您的账号已被禁用");
             }

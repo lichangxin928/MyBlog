@@ -4,8 +4,11 @@ package com.lcx.controller;
 import com.github.pagehelper.PageInfo;
 import com.lcx.entity.User;
 import com.lcx.service.impl.UserServiceImpl;
+import com.lcx.utils.ContextHolderUtil;
+import com.lcx.utils.RedisUserUtil;
 import com.lcx.utils.RequestUtils;
 import com.lcx.utils.Result;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,10 +27,14 @@ import java.util.UUID;
  */
 @RestController
 @RequestMapping("/user")
+@Slf4j
 public class UserController {
 
     @Autowired
     private UserServiceImpl userServiceImpl;
+
+    @Autowired
+    private RedisUserUtil redisUserUtil;
 
     @PostMapping("/create")
     public Result  create(@RequestBody User user){
@@ -78,6 +85,16 @@ public class UserController {
         System.out.println(RequestUtils.getBasePath(request)+"upload/"+newFileName);
         //最后返回的是一个可以访问的全路径
         return Result.ok("https://lcx-bqy.top/cms/"+"upload/"+newFileName);
+    }
+
+    @PostMapping("/getUserMsg")
+    public Result getUserMsg(){
+
+        User userInfo = redisUserUtil.getUserInfo(User.class);
+        String token = ContextHolderUtil.getTokenByHeader();
+        log.info("token 信息: {}  用户信息: {}",token,userInfo);
+
+        return Result.ok(userInfo);
     }
 
 }

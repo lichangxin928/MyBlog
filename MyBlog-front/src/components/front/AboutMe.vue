@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <h2>我的名片</h2>
-        <p>网名：LCX & BQY</p>
+        <p>网名：LCX </p>
         <p>职业：程序员</p>
         <p>现居：中国.四川.成都</p>
         <p>Email：2431424266@qq.com</p>
@@ -16,7 +16,15 @@
 
 <script>
     export default {
-        name: "AboutMe"
+        name: "AboutMe",
+        data(){
+          return {
+
+          }
+        },
+      mounted() {
+
+      }
     }
 </script>
 

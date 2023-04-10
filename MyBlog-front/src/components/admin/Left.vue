@@ -5,10 +5,9 @@
                  router
                  @open="handleOpen"
                  @close="handleClose"
-
         >
             <template v-for="(menu,index) in menus" >
-                <el-submenu  :index="menu.children[0].router" :key="index">
+                <el-submenu  :index="menu.children[index].router" :key="index">
                     <template slot="title">
                         <i :class="menu.icon"></i>
                         <span slot="title">{{menu.name}}</span>
@@ -36,7 +35,10 @@
                 menus:menus
             };
         },
-        methods:{
+        mounted() {
+
+        },
+      methods:{
             handleOpen(key, keyPath) {
             },
             handleClose(key, keyPath) {

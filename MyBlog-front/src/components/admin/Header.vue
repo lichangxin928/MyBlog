@@ -4,7 +4,7 @@
                 <table  class="logo">
                     <tr>
                         <td>
-                            LCX博客
+                            博客
                         </td>
                     </tr>
                 </table>
