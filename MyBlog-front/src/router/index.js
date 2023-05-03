@@ -17,6 +17,7 @@ import  Channel_add from '../views/admin/channel/Add'
 import  Channel_edit from '../views/admin/channel/Edit'
 import  ArticleAdd from '../views/admin/article/Add'
 import  ArticleEdit from '../views/admin/article/Edit'
+import Auth from '../views/admin/authority/index'
 
 import FIndex from  '../views/front/Index'
 import List from  '../views/front/List'
@@ -25,6 +26,11 @@ import ChannelDetail from  '../views/front/ChannelDetail'
 import TagList from  '../views/front/TagList'
 
 import token from '../store/token'
+import AddGroupUser from "@/views/admin/authority/AddGroupUser";
+import UserGroupRelMenu from "@/views/admin/authority/UserGroupRelMenu";
+import AddGroupMenu from "@/views/admin/authority/AddGroupMenu";
+import Register from "@/views/admin/Register";
+import Group from "@/views/admin/authority/Group";
 
 Vue.use(VueRouter)
 
@@ -88,6 +94,11 @@ const router=new VueRouter({
           component:   Login
         },
         {
+            path:'/register',
+            name:'register',
+            component:Register
+        },
+        {
             path: '/index',
             name: 'index',
             component:   Index,
@@ -97,6 +108,12 @@ const router=new VueRouter({
                     name :'info',
                     component: Info
                 },
+                {
+                    path:"/group",
+                    name:"group",
+                    component: Group
+                }
+                ,
                 {
                     path: '/user',
                     name :'User',
@@ -138,6 +155,11 @@ const router=new VueRouter({
                     component: FriendLinkEdit
                 },
                 {
+                    path:'/userGroup_add',
+                    name:'userGroup_add',
+                    component:AddGroupUser
+                },
+                {
                     path: '/article',
                     name :'article',
                     component: Article
@@ -161,6 +183,21 @@ const router=new VueRouter({
                     path: '/comment_check',
                     name :'comment_check',
                     component: Check
+                },
+                {
+                    path:'/auth',
+                    name:'authority',
+                    component:Auth
+                },
+                {
+                    path:"/group_menu",
+                    name:"groupMenu",
+                    component:UserGroupRelMenu
+                },
+                {
+                    path:"/userGroupMenu_add",
+                    name:"AddGroupMenu",
+                    component:AddGroupMenu
                 }
             ]
         }

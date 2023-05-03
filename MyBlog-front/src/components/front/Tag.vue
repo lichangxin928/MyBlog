@@ -22,7 +22,7 @@
         },
         mounted(){
             all().then(data=>{
-                this.tags=data.data
+                this.tags=data.data.slice(0,70)
             }).catch(error=>{
                 this.$message.error(error)
             })

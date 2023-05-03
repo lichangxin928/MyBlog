@@ -7,7 +7,7 @@
                  @close="handleClose"
         >
             <template v-for="(menu,index) in menus" >
-                <el-submenu  :index="menu.children[index].router" :key="index">
+                <el-submenu  id="leftBox" :index="menu.children[index].router" :key="index">
                     <template slot="title">
                         <i :class="menu.icon"></i>
                         <span slot="title">{{menu.name}}</span>
@@ -28,15 +28,30 @@
 
 <script>
     import menus from  '../../api/menu'
+    import {getMenu} from "../../api/authority"
     export default {
         name: "Left",
         data() {
             return {
-                menus:menus
+                menus:[
+                  {
+                    id: '1',
+                    name: '功能名称',
+                    icon: 'el-icon-s-home',
+                    children:[ {
+                      name: '',
+                      icon: '',
+                      router: ''
+                    }]
+                  }
+                ]
             };
         },
-        mounted() {
-
+      created() {
+          getMenu().then(data=>{
+            this.menus[0].children = data.data;
+          },error=>{
+          })
         },
       methods:{
             handleOpen(key, keyPath) {

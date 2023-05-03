@@ -32,7 +32,6 @@
                         <el-dropdown-item command="logout">退出登录</el-dropdown-item>
                     </el-dropdown-menu>
                 </el-dropdown>
-
             </el-col>
         </el-row>
 </template>
@@ -53,7 +52,7 @@
                 this.$router.push('/login')
             }
           if (token.getUser().avatar == null) {
-              this.avatar='http://shunxinblog.oss-cn-hangzhou.aliyuncs.com/2020/12/30/c1d5fb12c96c48f0b10d1b5764b73ecd.jpg'
+              this.avatar=""
           }
         },
         methods:{

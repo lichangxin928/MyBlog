@@ -1,6 +1,6 @@
 <!-- 首页 -->
 <template>
-    <div v-title data-title="LCX博客">
+    <div v-title data-title="博客">
         <!-- Header 部分 -->
         <Header @child-even="parentEven" @child-evenTitle="parentEvenTitle"></Header>
         <article>
@@ -12,6 +12,7 @@
             <div class="rbox">
                 <!-- 关于我 -->
                 <AboutMe></AboutMe>
+              <like v-if="user"></like>
                 <!-- 排行榜 -->
                 <Order></Order>
                 <!-- 标签 -->
@@ -37,16 +38,19 @@
     import Order from "../../components/front/Order";
     import Footer from "../../components/front/Footer";
     import Tag from '../../components/front/Tag'
+    import Like from '../../components/front/Like'
+    import token from "@/store/token";
 
     export default {
         name: "Index",
         components: {
             Footer,
-            Order, NewBlog, Table, AboutMe, Header, Tag, FriendLink
+            Order, NewBlog, Table, AboutMe, Header, Tag, FriendLink,Like
         },
 
         data() {
             return {
+               user:token.getUser(),
                 articles: [],
                 pages: '',
                 total: 0,
@@ -63,11 +67,8 @@
             })
             next()
         },
-        methods: {
+        methods : {
             parentEven(data) {
-                console.log(data)
-                console.log(data)
-                console.log('aaaa')
                 this.newData = data;
             },
             parentEvenTitle(data) {

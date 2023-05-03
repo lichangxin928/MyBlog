@@ -34,3 +34,10 @@ export function detail(id) {
         id: id
     })
 }
+export function checkEmailReq(email) {
+    return axiosInstall.get('user/checkEmail?email='+email)
+}
+
+export function register(form){
+    return axiosInstall.post('/user/register',form)
+}

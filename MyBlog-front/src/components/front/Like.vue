@@ -3,7 +3,8 @@
         <h2 class="htitle">猜你喜欢</h2>
         <ul>
             <li v-for="(item,index) in articles" :key="index">
-                <router-link  :to='"/detail/"+item.id' target="_blank">{{item.title}}</router-link ></li>
+                <router-link  :to='"/detail/"+item.id' target="_blank">{{item.title}}</router-link >
+            </li>
         </ul>
     </div>
 </template>
@@ -19,7 +20,8 @@
             }
         },
         mounted() {
-            getLikeArticle(this.$route.params.id).then(data=>{
+            console.log(this.$route.params.id)
+            getLikeArticle(1000).then(data=>{
                 this.articles=data.data.articleVo
              })
         },

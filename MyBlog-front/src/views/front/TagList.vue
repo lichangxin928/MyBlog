@@ -7,7 +7,7 @@
             </div>
             <div class="rbox">
                 <Order></Order>
-                <!--<Like></Like>-->
+                <Like></Like>
                 <Tag></Tag>
             </div>
         </article>
@@ -23,11 +23,12 @@
     import Order from "../../components/front/Order";
     import Footer from "../../components/front/Footer";
     import Tag from "../../components/front/Tag";
+    import Like from "../../components/front/Like";
 
     export default {
         name: "List",
         components: {
-            Tag, Footer, Order,  TagBlog , Header
+            Tag, Footer, Order,  TagBlog , Header,Like
         },
         data(){
             return{

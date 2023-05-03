@@ -33,7 +33,7 @@ public class TokenInterceptor implements HandlerInterceptor {
         String token=request.getHeader(Constants.TOKEN);
         User user = redisUtil.get(Constants.USER_PREFIX + token,User.class);
         if (user == null){
-            throw new MyException("token 超时或者不合法");
+            throw new MyException("用户登录信息超时，请重新登录~~");
         }
         //token续期
         redisUtil.expire(Constants.USER_PREFIX + token,Constants.TOKEN_EXPR);

@@ -1,6 +1,9 @@
 package com.lcx.controller;
 
 import com.lcx.entity.Menu;
+import com.lcx.service.AuthorityService;
+import com.lcx.utils.Result;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,8 +21,11 @@ import java.util.List;
 @RequestMapping("/authority")
 public class AuthorityController {
 
+    @Autowired
+    AuthorityService authorityService;
+
     @PostMapping("/getMenu")
-    List<Menu> getMenu(){
-        return new ArrayList<>();
+    Result getMenu(){
+        return Result.ok(authorityService.getMenu());
     }
 }

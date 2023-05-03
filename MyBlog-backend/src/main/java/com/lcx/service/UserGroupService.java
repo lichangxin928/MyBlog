@@ -1,8 +1,11 @@
 package com.lcx.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.lcx.entity.Menu;
 import com.lcx.entity.UserGroup;
-import org.apache.ibatis.annotations.Mapper;
+
+
+import java.util.List;
 
 /**
  * @author lichangxin2
@@ -10,4 +13,5 @@ import org.apache.ibatis.annotations.Mapper;
  * @Description
  */
 public interface UserGroupService extends IService<UserGroup> {
+    List<Menu> findMenuByUserId(Integer userId);
 }

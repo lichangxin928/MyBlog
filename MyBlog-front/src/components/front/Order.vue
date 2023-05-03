@@ -1,6 +1,6 @@
 <template>
     <div class="whitebg paihang">
-        <h2 class="htitle">点击排行</h2>
+        <h2 class="htitle">热点文章</h2>
         <section class="topnews imgscale"><router-link :to='"/detail/"+article.id' target="_blank">
           <span>{{article.title}}</span>
         </router-link></section>
